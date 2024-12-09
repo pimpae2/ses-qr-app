@@ -19,6 +19,9 @@
         <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css"/>   
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>   
         <link href="css/select2.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/css/bootstrap-datepicker.min.css"/>  
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-timepicker/css/bootstrap-timepicker.min.css" rel="stylesheet">
+
     </head>
     <body> 
         <div class="wrapper">
@@ -114,9 +117,22 @@
                                             <th class="text-center">จำนวน/วัน</th>
                                             <th>เหตุผลการลา</th>
                                             <th class="text-center">สถานะ</th>
+                                            <th class="text-center">&nbsp;</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <tr>
+                                            <td>01-02-2024	</td>
+                                            <td class="text-center">ลาป่วย</td>
+                                            <td>
+                                                02-02-2024 08:00 - 02-02-2024 17:00
+                                            </td>
+                                            <td class="text-center">
+                                                2 
+                                            </td>
+                                            <td>ลาป่วย</td>
+                                            <td class="text-center"><i class="fas fa-check text-success"></i></td>
+                                        </tr>
                                         <tr>
                                             <td>08-09-2024	</td>
                                             <td class="text-center">ลาป่วย</td>
@@ -138,7 +154,10 @@
                                             <td class="text-center">0.5</td>
                                             <td>ลาธุระทางราชการ</td>
                                             <td class="text-center text-danger">
-                                                รออนุมัติ
+                                                รออนุมัติ 
+                                            </td>
+                                            <td class="text-center text-danger"> 
+                                                <button class="btn btn-danger btn-sm">ยกเลิก</button>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -151,10 +170,10 @@
                             <h3><i class="far fa-edit"></i> สร้างใบลา</h3>
                             <hr> 
                             <div class="container">
-                                <div class="row justify-content-center">
+                                <div class="row justify-content-x">
                                     <div class="col-lg-8">
                                         <form>
-                                            <div class="row"> 
+                                            <div class="row mb-3"> 
                                                 <label class="col-lg-2">ชื่อ - นามสกุล</label>  
                                                 <div class="col-lg-4">
                                                     <input type="text" class="form-control" value="นายอดิศร ศรีสุธรรม" disabled>
@@ -163,12 +182,47 @@
                                                 <label class="col-lg-2">ประเภทการลา</label>  
                                                 <div class="col-lg-4">
                                                     <select class="js-example-basic-multiple w-100" id="month"> 
-                                                        <option value="0" disabled selected>-- เลือกเดือน --</option>
-                                                        <option value="1" selected>มกราคม</option> 
-                                                        <option value="2">กุมภาพันธ์</option> 
-                                                        <option value="3">มีนาคม</option>   
+                                                        <option value="0" disabled selected>-- ประเภทการลา --</option>
+                                                        <option value="1">ลากิจ</option> 
+                                                        <option value="2">ลาป่วย</option> 
+                                                        <option value="3">ลาอื่นๆ</option>   
                                                     </select>
                                                 </div>
+                                            </div>
+                                            <div class="row mb-3"> 
+                                                <label class="col-lg-2">ตั้งแต่วันที่</label>  
+                                                <div class="col-lg-4">
+                                                    <input type="text" class="form-control date">
+                                                </div>
+                                                
+                                                <label class="col-lg-2">เวลา</label>  
+                                                <div class="col-lg-4">
+                                                    <input type="text" class="form-control timepicker">
+                                                </div>
+                                            </div>
+                                            <div class="row mb-3"> 
+                                                <label class="col-lg-2">ถึงวันที่</label>  
+                                                <div class="col-lg-4">
+                                                    <input type="text" class="form-control date">
+                                                </div>
+                                                
+                                                <label class="col-lg-2">เวลา</label>  
+                                                <div class="col-lg-4">
+                                                    <input type="text" class="form-control timepicker">
+                                                </div>
+                                            </div>
+                                            <div class="row mb-3"> 
+                                                <label class="col-lg-2">เหตุผลการลา</label>  
+                                                <div class="col-lg-10">
+                                                    <textarea name="" class="form-control" id="" rows="4"></textarea>
+                                                    <hr>
+                                                </div> 
+                                            </div>
+                                            <div class="row mb-3"> 
+                                                <label class="col-lg-2">&nbsp;</label>  
+                                                <div class="col-lg-4">
+                                                    <button class="btn btn-primary">สร้าง</button>
+                                                </div> 
                                             </div>
                                         </form>
                                     </div>
@@ -189,7 +243,10 @@
         <script src="js/jquery.dataTables.min.js"></script>
         <script src="js/dataTables.bootstrap5.min.js"></script>
         <script src="js/select2.min.js"></script>
-         
+        <script src="js/bootstrap-datepicker.min.js"></script>
+        <script src="js/bootstrap-datepicker.th.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap-timepicker/js/bootstrap-timepicker.min.js"></script>
+
         
 
 
@@ -199,6 +256,21 @@
                 $('.item-sup').click(function () {
                     $(this).toggleClass("show");    
                 });   
+
+                
+                $('.date').datepicker({ 
+                    language: 'th',
+                    format: 'dd-mm-yyyy',
+                    clearBtn: false, 
+                    calendarWeeks: false,
+                    autoclose: true,
+                    todayHighlight: true,
+                    toggleActive: true
+                });
+                $('.timepicker').timepicker({
+                    showMeridian: false,
+                    minuteStep: 5, 
+                });
             });   
         </script>
  

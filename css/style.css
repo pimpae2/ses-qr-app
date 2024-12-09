@@ -463,7 +463,7 @@ transition: .33s all ease-out;
     background-size:  100% auto;
   }
 }
-
+/* 
 .datepicker { 
   width: 335px;
 }
@@ -543,7 +543,7 @@ transition: .33s all ease-out;
   box-shadow: none !important;
   border: none !important;
   color: #000;
-} 
+}  */
 .item-sup .sup-menu{
   display: none;
 }
