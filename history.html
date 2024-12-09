@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="FICT CV Management">
+        <meta name="author" content="FICT CV Management"> 
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="shortcut icon" href="img/logo-app.png" />
+        
+        <title>SES App</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/app.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet"> 
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css"/>   
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>   
+        <link href="css/select2.min.css" rel="stylesheet" />
+    </head>
+    <body> 
+        <div class="wrapper">
+            <nav id="sidebar" class="sidebar js-sidebar">
+                <div class="sidebar-content js-simplebar">
+                    
+					<img src="img/logo-app.png" class="logo" alt="FICT CV Management">
+					<br>
+                    <ul class="sidebar-nav"> 
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="index.html"> 
+								<i class="fal fa-th-large"></i>
+								<span class="align-middle">Dashboard</span>
+                            </a>
+                        </li> 
+                        <li class="sidebar-item active">
+                            <a class="sidebar-link" href="check-in.html"> 
+								<i class="fal fa-qrcode"></i>
+								<span class="align-middle">ลงเวลา เข้างาน</span>
+                            </a>
+                        </li> 
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="daily.html"> 
+								<i class="fal fa-calendar-alt"></i>
+								<span class="align-middle">ตารางการทำงาน</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="leave.html"> 
+								<i class="far fa-calendar-times"></i>
+								<span class="align-middle">การลา</span>
+                            </a>
+                        </li>   
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="ot.html"> 
+								<i class="far fa-clock"></i>
+								<span class="align-middle">โอที</span>
+                            </a>
+                        </li>   
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="login.html">  
+								<i class="fal fa-sign-out-alt"></i>
+								<span class="align-middle">ออกจากระบบ</span>
+                            </a>
+                        </li>    
+                    </ul>  
+                </div>
+            </nav>
+            <div class="main">
+                <nav class="navbar navbar-expand navbar-light navbar-bg">
+                    <a class="sidebar-toggle js-sidebar-toggle">
+                        <i class="fal fa-bars"></i>
+                    </a> 
+                    <div class="navbar-collapse collapse">
+                        <ul class="navbar-nav navbar-align w-100 justify-content-between">
+							<li class="nav-item nav-date text-center"> 
+                                <img src="img/logo-app.png" alt="logo_fict" class="pc-x">
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#" data-bs-toggle="dropdown">
+                                    <img src="img/avatar.jpg" alt="avatar" class="avatarx">
+                                </a>
+                                <a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
+                                <img src="img/avatar.jpg" class="avatar img-fluid rounded me-1" alt="Charles Hall" /> <span class="text-dark">อดิศร ศรีสุธรรม (survey)</span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end">
+                                    <a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="user"></i> โปรไฟล์</a>  
+                                    <a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="settings"></i> ตั้งค่า</a> 
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="login.html">ออกจากระบบ</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <main class="content">
+                    <div class="container-fluid p-0">
+                        <div class="col">
+                            <div class="row">
+                                <div class="text-hx">
+                                    <h4>ประวัติการบันทึกเวลา</h4>
+                                </div>
+                            </div> 
+                            <div class="row">
+                                <div class="col-2">
+                                    <img src="img/avatar.jpg" alt="avatar" class="avatarx">
+                                </div>
+                                <div class="col-10">
+                                    <h4>นายอดิศร ศรีสุธรรม </h4>
+                                    <h5>พนักงาน Survey</h5>
+                                </div> 
+                            </div>
+                            <br>   
+
+                            
+                            <div class="row mb-1">
+                                <label class="col-3 col-lg-2" for="month">
+                                    <h4>เดือน</h4>
+                                </label>
+                                <div class="col-9 col-lg-2"> 
+                                    <select class="js-example-basic-multiple w-100" id="month"> 
+                                        <option value="0" disabled selected>-- เลือกเดือน --</option>
+                                        <option value="1" selected>มกราคม</option> 
+                                        <option value="2">กุมภาพันธ์</option> 
+                                        <option value="3">มีนาคม</option>  
+                                        <option value="4">เมษายน</option>  
+                                        <option value="5">พฤษภาคม</option>  
+                                        <option value="6">มิถุนายน</option>  
+                                        <option value="7">กรกฎาคม</option>  
+                                        <option value="8">สิงหาคม</option>  
+                                        <option value="9">กันยายน</option>  
+                                        <option value="10">ตุลาคม</option>  
+                                        <option value="11">พฤศจิกายน</option>  
+                                        <option value="12">ธันวาคม </option>  
+                                    </select>
+                                </div>   
+                            </div> 
+
+                            <div class="table-responsive time-upx">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>วันที่</th>
+                                            <th>เวร</th>
+                                            <th>เข้า</th>
+                                            <th>ออก</th>
+                                            <th>หมายเหตุ</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody> 
+                                        <tr class="bg-danger">
+                                            <td>1 ม.ค. 2567</td>
+                                            <td colspan="4">Day Off</td> 
+                                        </tr>
+                                        <tr class="bg-danger">
+                                            <td>2 ม.ค. 2567</td>
+                                            <td colspan="4">Day Off</td> 
+                                        </tr> 
+                                        <tr>
+                                            <td>3 ม.ค. 2567</td>
+                                            <td>08:00-17:00</td>
+                                            <td>07:56</td>
+                                            <td>17:11</td>
+                                            <td><a href="time-des.html" class="text-black"><i class="fal fa-ellipsis-v"></i></a></td>
+                                        </tr>  
+                                        <tr>
+                                            <td>4 ม.ค. 2567</td>
+                                            <td>08:00-17:00</td>
+                                            <td>07:56</td>
+                                            <td>17:11</td>
+                                            <td><a href="time-des.html" class="text-black"><i class="fal fa-ellipsis-v"></i></a></td>
+                                        </tr>  
+                                        <tr>
+                                            <td>5 ม.ค. 2567</td>
+                                            <td>08:00-17:00</td>
+                                            <td>07:56</td>
+                                            <td>17:11</td>
+                                            <td><a href="time-des.html" class="text-black"><i class="fal fa-ellipsis-v"></i></a></td>
+                                        </tr>  
+                                        <tr>
+                                            <td>6 ม.ค. 2567</td>
+                                            <td>08:00-17:00</td>
+                                            <td>07:56</td>
+                                            <td>17:11</td>
+                                            <td><a href="time-des.html" class="text-black"><i class="fal fa-ellipsis-v"></i></a></td>
+                                        </tr>  
+                                        <tr>
+                                            <td>7 ม.ค. 2567</td>
+                                            <td>08:00-17:00</td>
+                                            <td>07:56</td>
+                                            <td>17:11</td>
+                                            <td><a href="time-des.html" class="text-black"><i class="fal fa-ellipsis-v"></i></a></td>
+                                        </tr>  
+                                        <tr>
+                                            <td>8 ม.ค. 2567</td>
+                                            <td>08:00-17:00</td>
+                                            <td>07:56</td>
+                                            <td>17:11</td>
+                                            <td><a href="time-des.html" class="text-black"><i class="fal fa-ellipsis-v"></i></a></td>
+                                        </tr>  
+                                        <tr class="bg-danger">
+                                            <td>9 ม.ค. 2567</td>
+                                            <td colspan="4">Day Off</td> 
+                                        </tr>
+                                        <tr>
+                                            <td>10 ม.ค. 2567</td>
+                                            <td>17:00-23:59</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td><a href="time-des.html" class="text-black"><i class="fal fa-ellipsis-v"></i></a></td>
+                                        </tr>   
+                                        <tr>
+                                            <td>11 ม.ค. 2567</td>
+                                            <td>17:00-23:59</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td><a href="time-des.html" class="text-black"><i class="fal fa-ellipsis-v"></i></a></td>
+                                        </tr>  
+                                        <tr>
+                                            <td>12 ม.ค. 2567</td>
+                                            <td>17:00-23:59</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td><a href="time-des.html" class="text-black"><i class="fal fa-ellipsis-v"></i></a></td>
+                                        </tr>  
+                                        <tr>
+                                            <td>13 ม.ค. 2567</td>
+                                            <td>17:00-23:59</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td><a href="time-des.html" class="text-black"><i class="fal fa-ellipsis-v"></i></a></td>
+                                        </tr>  
+                                        <tr>
+                                            <td>14 ม.ค. 2567</td>
+                                            <td>17:00-23:59</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td><a href="time-des.html" class="text-black"><i class="fal fa-ellipsis-v"></i></a></td>
+                                        </tr>  
+                                        <tr>
+                                            <td>15 ม.ค. 2567</td>
+                                            <td>17:00-23:59</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td><a href="time-des.html" class="text-black"><i class="fal fa-ellipsis-v"></i></a></td>
+                                        </tr>  
+                                        <tr>
+                                            <td>16 ม.ค. 2567</td>
+                                            <td>17:00-23:59</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td><a href="time-des.html" class="text-black"><i class="fal fa-ellipsis-v"></i></a></td>
+                                        </tr>   
+                                        <tr class="bg-danger">
+                                            <td>17 ม.ค. 2567</td>
+                                            <td colspan="4">Day Off</td> 
+                                        </tr>
+                                        <tr>
+                                            <td>18 ม.ค. 2567</td>
+                                            <td>08:00-17:00</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td><a href="time-des.html" class="text-black"><i class="fal fa-ellipsis-v"></i></a></td>
+                                        </tr>  
+                                        <tr>
+                                            <td>19 ม.ค. 2567</td>
+                                            <td>08:00-17:00</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td><a href="time-des.html" class="text-black"><i class="fal fa-ellipsis-v"></i></a></td>
+                                        </tr>  
+                                        <tr>
+                                            <td>20 ม.ค. 2567</td>
+                                            <td>08:00-17:00</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td><a href="time-des.html" class="text-black"><i class="fal fa-ellipsis-v"></i></a></td>
+                                        </tr>  
+                                        <tr>
+                                            <td>21 ม.ค. 2567</td>
+                                            <td>08:00-17:00</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td><a href="time-des.html" class="text-black"><i class="fal fa-ellipsis-v"></i></a></td>
+                                        </tr>  
+                                        <tr>
+                                            <td>22 ม.ค. 2567</td>
+                                            <td>08:00-17:00</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td><a href="time-des.html" class="text-black"><i class="fal fa-ellipsis-v"></i></a></td>
+                                        </tr>  
+                                        <tr>
+                                            <td>23 ม.ค. 2567</td>
+                                            <td>08:00-17:00</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td><a href="time-des.html" class="text-black"><i class="fal fa-ellipsis-v"></i></a></td>
+                                        </tr>   
+                                        <tr class="bg-danger">
+                                            <td>24 ม.ค. 2567</td>
+                                            <td colspan="4">Day Off</td> 
+                                        </tr>
+                                        <tr>
+                                            <td>25 ม.ค. 2567</td>
+                                            <td>08:00-17:00</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td><a href="time-des.html" class="text-black"><i class="fal fa-ellipsis-v"></i></a></td>
+                                        </tr>  
+                                        <tr>
+                                            <td>26 ม.ค. 2567</td>
+                                            <td>08:00-17:00</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td><a href="time-des.html" class="text-black"><i class="fal fa-ellipsis-v"></i></a></td>
+                                        </tr>  
+                                        <tr>
+                                            <td>27 ม.ค. 2567</td>
+                                            <td>08:00-17:00</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td><a href="time-des.html" class="text-black"><i class="fal fa-ellipsis-v"></i></a></td>
+                                        </tr>  
+                                        <tr>
+                                            <td>28 ม.ค. 2567</td>
+                                            <td>08:00-17:00</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td><a href="time-des.html" class="text-black"><i class="fal fa-ellipsis-v"></i></a></td>
+                                        </tr>  
+                                        <tr>
+                                            <td>29 ม.ค. 2567</td>
+                                            <td>08:00-17:00</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td><a href="time-des.html" class="text-black"><i class="fal fa-ellipsis-v"></i></a></td>
+                                        </tr>   
+                                        <tr>
+                                            <td>30 ม.ค. 2567</td>
+                                            <td>08:00-17:00</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td><a href="time-des.html" class="text-black"><i class="fal fa-ellipsis-v"></i></a></td>
+                                        </tr>  
+                                        <tr class="bg-danger">
+                                            <td>31 ม.ค. 2567</td>
+                                            <td colspan="4">Day Off</td> 
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div> 
+
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>สาย</th>
+                                        <th>ป่วย</th>
+                                        <th>ลา</th>
+                                        <th>ขาด</th>
+                                        <th>OT</th>
+                                        <th>X2</th>
+                                    </tr>
+                                </thead>
+                                <tbody> 
+                                    <tr> 
+                                        <td>2</td> 
+                                        <td>1</td> 
+                                        <td>2</td> 
+                                        <td>0</td> 
+                                        <td>4</td> 
+                                        <td>2</td> 
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                        </div>
+                    </div>
+                </main> 
+            </div>
+        </div> 
+
+        <script src="js/jquery-3.5.1.min.js"></script>   
+        <script src="js/app.js"></script>  
+
+        <script src="js/jquery.dataTables.min.js"></script>
+        <script src="js/dataTables.bootstrap5.min.js"></script>
+        <script src="js/select2.min.js"></script>
+         
+        
+
+
+        <script>   
+            $(document).ready(function() { 
+                $('.js-example-basic-multiple').select2();   
+                $('.item-sup').click(function () {
+                    $(this).toggleClass("show");    
+                });   
+            });   
+        </script>
+ 
+
+        
+    </body>
+</html>
