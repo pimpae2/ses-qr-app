@@ -681,6 +681,32 @@ transition: .33s all ease-out;
   background-repeat: no-repeat !important;
   background-size: 40px auto !important;
   background-position: center !important;
+  width: 40px;
   height: 40px;
-  height: 40px;
+  left: auto;
+  display: flex;
+  right: auto;
+  top: 0;
+  transform: rotate(180deg);
+}
+.glyphicon.glyphicon-chevron-down::before{
+  content: ""; 
+  position: absolute;
+  background-image: url(../img/keyboard_arrow_down.png);
+  background-repeat: no-repeat !important;
+  background-size: 40px auto !important;
+  background-position: center !important;
+  width: 40px;
+  height: 40px; 
+  display: flex; 
+  bottom: 0; 
+} 
+.bootstrap-timepicker-widget input{
+  outline: none !important;
+  border: none !important;
+}
+.bootstrap-timepicker-widget a:hover{
+  background-color: transparent !important;
+  outline: none !important;
+  border: none !important;
 }
