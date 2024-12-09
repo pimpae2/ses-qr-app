@@ -21,7 +21,7 @@
         <link href="css/select2.min.css" rel="stylesheet" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/css/bootstrap-datepicker.min.css"/>  
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-timepicker/css/bootstrap-timepicker.min.css" rel="stylesheet">
-
+        
     </head>
     <body> 
         <div class="wrapper">
@@ -266,10 +266,11 @@
                     autoclose: true,
                     todayHighlight: true,
                     toggleActive: true
-                });
+                }); 
                 $('.timepicker').timepicker({
-                    showMeridian: false,
-                    minuteStep: 5, 
+                    showMeridian: true,
+                    minuteStep: 1,
+                    defaultTime: 'current'
                 });
             });   
         </script>
