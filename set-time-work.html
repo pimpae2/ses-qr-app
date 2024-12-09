@@ -19,6 +19,7 @@
         <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css"/>   
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>   
         <link href="css/select2.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/css/bootstrap-datepicker.min.css"/>  
     </head>
     <body> 
         <div class="wrapper">
@@ -33,35 +34,29 @@
 								<i class="fal fa-th-large"></i>
 								<span class="align-middle">Dashboard</span>
                             </a>
-                        </li> 
-                        <li class="sidebar-item">
-                            <a class="sidebar-link" href="check-in.html"> 
-								<i class="fal fa-qrcode"></i>
-								<span class="align-middle">ลงเวลา เข้างาน</span>
-                            </a>
-                        </li> 
+                        </li>  
                         <li class="sidebar-item">
                             <a class="sidebar-link" href="daily.html"> 
 								<i class="fal fa-calendar-alt"></i>
-								<span class="align-middle">ตารางการทำงาน</span>
+								<span class="align-middle">ตารางการทำงานพนักงาน</span>
                             </a>
                         </li>  
                         <li class="sidebar-item">
                             <a class="sidebar-link" href="leave.html"> 
 								<i class="far fa-calendar-times"></i>
-								<span class="align-middle">การลา</span>
+								<span class="align-middle">การลาพนักงาน</span>
                             </a>
                         </li>   
                         <li class="sidebar-item">
                             <a class="sidebar-link" href="ot.html"> 
 								<i class="far fa-clock"></i>
-								<span class="align-middle">โอที</span>
+								<span class="align-middle">โอทีพนักงาน</span>
                             </a>
-                        </li>   
+                        </li>    
                         <li class="sidebar-item">
-                            <a class="sidebar-link" href="login.html">  
-								<i class="fal fa-sign-out-alt"></i>
-								<span class="align-middle">ออกจากระบบ</span>
+                            <a class="sidebar-link" href="report.html"> 
+								<i class="far fa-file-alt"></i>
+								<span class="align-middle">รายงาน</span>
                             </a>
                         </li>    
                         <li class="sidebar-item item-sup show">
@@ -75,11 +70,11 @@
                                     <span class="align-middle">ผู้ใช้งาน</span>
                                 </a>   
                                 <a class="sidebar-link" href="set-time-work.html"> 
-                                    <span class="align-middle">ผู้ใช้งาน</span>
+                                    <span class="align-middle">ตั้งค่าเวลาการทำงาน</span>
                                 </a>   
-                                <a class="sidebar-link" href="set-time-work.html"> 
+                                <!-- <a class="sidebar-link" href="set-time-work.html"> 
                                     <span class="align-middle">ผู้ใช้งาน</span>
-                                </a>   
+                                </a>    -->
                             </div>
                         </li> 
                         <li class="sidebar-item">
@@ -126,20 +121,23 @@
                                 <div class="text-hx">
                                     <h4>ตั้งค่าเวลาทำงาน</h4>
                                 </div>
-                            </div> 
-                            <div class="row">
-                                <div class="col-2">
-                                    <img src="img/avatar.jpg" alt="avatar" class="avatarx">
-                                </div>
-                                <div class="col-10">
-                                    <h4>นายอดิศร ศรีสุธรรม (survey)</h4>
-                                    <h5>Programmer</h5>
-                                </div> 
-                            </div>
-                            <br>   
+                            </div>  
 
                             
-                            <div class="row mb-1">
+                            <div class="row mb-3">
+                                <label class="col-3 col-lg-2" for="month">
+                                    <h4>ปี</h4>
+                                </label>
+                                <div class="col-9 col-lg-2"> 
+                                    <select class="js-example-basic-multiple w-100" id="year"> 
+                                        <option value="0" disabled selected>-- เลือกปี --</option>
+                                        <option value="2568">2568</option> 
+                                        <option value="2567">2567</option>  
+                                        <option value="2566">2566 </option>  
+                                    </select>
+                                </div>    
+                            </div> 
+                            <div class="row mb-3"> 
                                 <label class="col-3 col-lg-2" for="month">
                                     <h4>เดือน</h4>
                                 </label>
@@ -161,23 +159,34 @@
                                     </select>
                                 </div>   
                             </div> 
+                            <hr> 
 
+                                
+                            <h3><i class="fas fa-history"></i> ประวัติกาตั้งค่าเวลาทำงาน</h3>
                             <div class="table-responsive">
-                                <table class="table">
+                                <table class="table table-leave">
                                     <thead>
-                                        <tr>
-                                            <th>วันที่</th>
-                                            <th>เวลาเข้า</th>
-                                            <th>เวลาออก</th>
-                                            <th>Location</th>
-                                            <th>&nbsp;</th>
+                                        <tr> 
+                                            <th class="text-center">วันที่สร้าง</th>
+                                            <th class="text-center">ตั้งแต่วันที่</th>
+                                            <th class="text-center">ถึงวันที่</th>
+                                            <th class="text-center">จำนวน/วัน</th>
+                                            <th>เหตุผลการลา</th> 
+                                            <th class="text-center">&nbsp;</th>
                                         </tr>
                                     </thead>
-                                    <tbody> 
+                                    <tbody>
+                                        <tr> 
+                                            <td class="text-center">ลาป่วย</td> 
+                                            <td class="text-center">ลาป่วย</td> 
+                                            <td class="text-center">
+                                                <button class="btn btn-sm btn-danger"><i class="fal fa-edit"></i></button>
+                                            </td> 
+                                        </tr> 
                                     </tbody>
                                 </table>
                             </div> 
- 
+
                         </div>
                     </div>
                 </main> 
@@ -190,7 +199,9 @@
         <script src="js/jquery.dataTables.min.js"></script>
         <script src="js/dataTables.bootstrap5.min.js"></script>
         <script src="js/select2.min.js"></script>
-         
+        <script src="js/bootstrap-datepicker.min.js"></script>
+        <script src="js/bootstrap-datepicker.th.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvNLmIPDzYq1O2zwT0Rx8K35Q3b5QH77g&callback=initMap&v=weekly" defer></script> 
         
 
 
@@ -200,6 +211,16 @@
                 $('.item-sup').click(function () {
                     $(this).toggleClass("show");    
                 });   
+                
+                $('.date').datepicker({ 
+                    language: 'th',
+                    format: 'dd-mm-yyyy',
+                    clearBtn: false, 
+                    calendarWeeks: false,
+                    autoclose: true,
+                    todayHighlight: true,
+                    toggleActive: true
+                });
             });   
         </script>
  
