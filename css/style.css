@@ -325,6 +325,12 @@ body{
   background-color: var(--lighter-shade);
   color: #fff;
 }
+.iconx{
+  position: absolute;
+  right: 25px;
+  top: 8px;
+  font-size: 18px;
+}
 
 /*
 transition: .33s all ease-out;  
@@ -709,4 +715,32 @@ transition: .33s all ease-out;
   background-color: transparent !important;
   outline: none !important;
   border: none !important;
+}
+
+.btn-h {
+  position: relative; 
+  cursor: pointer;
+}
+
+.btn-h:hover::after {
+  content: attr(data-hover);
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: black;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 1;
+  visibility: visible;
+  z-index: 1000;
+}
+
+.btn-h::after {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s;
 }

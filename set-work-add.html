@@ -118,121 +118,35 @@
                     <div class="container-fluid p-0">
                         <div class="col">
                             <div class="row">
-                                <div class="text-hx">
+                                <div class="text-hx mb-0">
                                     <h4>ตั้งค่าเวลาทำงาน</h4>
                                 </div>
                             </div>  
-
-                            <a href="set-work-add.html" class="btn btn btn-success"><i class="fas fa-plus"></i> เพิ่ม</a>
-
-                            <hr> 
-                            
-                            <div class="row mb-3">
-                                <label class="col-3 col-lg-2" for="month">
-                                    <h4>ปี</h4>
-                                </label>
-                                <div class="col-9 col-lg-2"> 
-                                    <select class="js-example-basic-multiple w-100" id="year"> 
-                                        <option value="0" disabled >-- เลือกปี --</option>
-                                        <option value="2568" selected>2568</option> 
-                                        <option value="2567">2567</option>  
-                                        <option value="2566">2566 </option>  
-                                    </select>
-                                </div>    
-                            </div>  
-
+ 
+                            <hr>  
                                 
-                            <h3><i class="fas fa-history"></i> ประวัติกาตั้งค่าเวลาทำงาน</h3>
-                            <div class="table-responsive">
-                                <table class="table table-leave">
-                                    <thead>
-                                        <tr> 
-                                            <th class="text-center">วันที่สร้าง</th>
-                                            <th class="text-center">ตั้งแต่วันที่</th>
-                                            <th class="text-center">ถึงวันที่</th> 
-                                            <th class="text-center">กะทำงาน/พนักงาน</th>  
-                                            <th class="text-center">&nbsp;</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr> 
-                                            <td class="text-center">30 พ.ย. 2567</td> 
-                                            <td class="text-center">29 ม.ค. 2568</td> 
-                                            <td class="text-center">4 ก.พ. 2568</td>  
-                                            <td class="text-center"> 
-
-                                                <button class="btn btn btn-primary btn-h btn-sm" data-hover="00:00 - 08:00">00:00 - 08:00 (5)</button> 
-                                                <button class="btn btn btn-primary btn-h btn-sm" data-hover="08:00 - 16:00">08:00 - 16:00 (6)</button>
-                                                <button class="btn btn btn-primary btn-h btn-sm" data-hover="16:00 - 00:00">16:00 - 00:00 (5)</button>
-                                            </td> 
-                                            <td class="text-center">
-                                                <button class="btn btn-sm btn-info btn-h" data-hover="ดูรายชื่อ" data-bs-toggle="modal" data-bs-target="#myModal"><i class="fal fa-users"></i></button>
-                                                <button class="btn btn-sm btn-danger btn-h" data-hover="แก้ไข"><i class="fal fa-edit"></i></button>
-                                            </td> 
-                                        </tr> 
-                                        <tr> 
-                                            <td class="text-center">30 พ.ย. 2567</td> 
-                                            <td class="text-center">22 ม.ค. 2568</td> 
-                                            <td class="text-center">28 ม.ค. 2568</td>  
-                                            <td class="text-center"> 
-
-                                                <button class="btn btn btn-primary btn-h btn-sm" data-hover="00:00 - 08:00">00:00 - 08:00 (4)</button> 
-                                                <button class="btn btn btn-primary btn-h btn-sm" data-hover="08:00 - 16:00">08:00 - 16:00 (7)</button>
-                                                <button class="btn btn btn-primary btn-h btn-sm" data-hover="16:00 - 00:00">16:00 - 00:00 (5)</button>
-                                            </td> 
-                                            <td class="text-center">
-                                                <button class="btn btn-sm btn-info btn-h" data-hover="ดูรายชื่อ" data-bs-toggle="modal" data-bs-target="#myModal"><i class="fal fa-users"></i></button>
-                                                <button class="btn btn-sm btn-danger btn-h" data-hover="แก้ไข"><i class="fal fa-edit"></i></button>
-                                            </td> 
-                                        </tr> 
-                                        <tr> 
-                                            <td class="text-center">30 พ.ย. 2567</td> 
-                                            <td class="text-center">15 ม.ค. 2568</td> 
-                                            <td class="text-center">21 ม.ค. 2568</td>  
-                                            <td class="text-center"> 
-
-                                                <button class="btn btn btn-primary btn-h btn-sm" data-hover="00:00 - 08:00">00:00 - 08:00 (5)</button> 
-                                                <button class="btn btn btn-primary btn-h btn-sm" data-hover="08:00 - 16:00">08:00 - 16:00 (6)</button>
-                                                <button class="btn btn btn-primary btn-h btn-sm" data-hover="16:00 - 00:00">16:00 - 00:00 (5)</button>
-                                            </td> 
-                                            <td class="text-center">
-                                                <button class="btn btn-sm btn-info btn-h" data-hover="ดูรายชื่อ" data-bs-toggle="modal" data-bs-target="#myModal"><i class="fal fa-users"></i></button>
-                                                <button class="btn btn-sm btn-danger btn-h" data-hover="แก้ไข"><i class="fal fa-edit"></i></button>
-                                            </td> 
-                                        </tr> 
-                                        <tr> 
-                                            <td class="text-center">30 พ.ย. 2567</td> 
-                                            <td class="text-center">8 ม.ค. 2568</td> 
-                                            <td class="text-center">14 ม.ค. 2568</td>  
-                                            <td class="text-center"> 
-
-                                                <button class="btn btn btn-primary btn-h btn-sm" data-hover="00:00 - 08:00">00:00 - 08:00 (5)</button> 
-                                                <button class="btn btn btn-primary btn-h btn-sm" data-hover="08:00 - 16:00">08:00 - 16:00 (5)</button>
-                                                <button class="btn btn btn-primary btn-h btn-sm" data-hover="16:00 - 00:00">16:00 - 00:00 (5)</button>
-                                            </td> 
-                                            <td class="text-center">
-                                                <button class="btn btn-sm btn-info btn-h" data-hover="ดูรายชื่อ" data-bs-toggle="modal" data-bs-target="#myModal"><i class="fal fa-users"></i></button>
-                                                <button class="btn btn-sm btn-danger btn-h" data-hover="แก้ไข"><i class="fal fa-edit"></i></button>
-                                            </td> 
-                                        </tr> 
-                                        <tr> 
-                                            <td class="text-center">30 พ.ย. 2567</td> 
-                                            <td class="text-center">1 ม.ค. 2568</td> 
-                                            <td class="text-center">7 ม.ค. 2568</td>  
-                                            <td class="text-center"> 
-
-                                                <button class="btn btn btn-primary btn-h btn-sm" data-hover="00:00 - 08:00">00:00 - 08:00 (3)</button> 
-                                                <button class="btn btn btn-primary btn-h btn-sm" data-hover="08:00 - 16:00">08:00 - 16:00 (6)</button>
-                                                <button class="btn btn btn-primary btn-h btn-sm" data-hover="16:00 - 00:00">16:00 - 00:00 (4)</button>
-                                            </td> 
-                                            <td class="text-center">
-                                                <button class="btn btn-sm btn-info btn-h" data-hover="ดูรายชื่อ" data-bs-toggle="modal" data-bs-target="#myModal"><i class="fal fa-users"></i></button>
-                                                <button class="btn btn-sm btn-danger btn-h" data-hover="แก้ไข"><i class="fal fa-edit"></i></button>
-                                            </td> 
-                                        </tr> 
-                                    </tbody>
-                                </table>
-                            </div> 
+                            <h3> เพิ่มการตั้งค่าเวลาทำงาน</h3>
+                            <div class="container">
+                                <div class="row justify-content-x">
+                                    <div class="col-lg-8">
+                                        <form> 
+                                            <div class="row mb-3"> 
+                                                <label class="col-lg-2">ตั้งแต่วันที่</label>  
+                                                <div class="col-lg-4 position-relative">
+                                                    <i class="far fa-calendar-alt iconx"></i>
+                                                    <input type="text" class="form-control date">
+                                                </div> 
+                                                <label class="col-lg-2">ถึงวันที่</label>  
+                                                <div class="col-lg-4 position-relative">
+                                                    <i class="far fa-calendar-alt iconx"></i>
+                                                    <input type="text" class="form-control date">
+                                                </div> 
+                                            </div> 
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            
 
                         </div>
                     </div>
@@ -344,6 +258,15 @@
                     $(this).toggleClass("show");    
                 });    
             });   
+            $('.date').datepicker({ 
+                language: 'th',
+                format: 'dd-mm-yyyy',
+                clearBtn: false, 
+                calendarWeeks: false,
+                autoclose: true,
+                todayHighlight: true,
+                toggleActive: true
+            }); 
         </script>
  
 
