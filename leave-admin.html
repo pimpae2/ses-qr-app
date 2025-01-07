@@ -41,13 +41,13 @@
 								<span class="align-middle">ตารางการทำงานพนักงาน</span>
                             </a>
                         </li>  
-                        <li class="sidebar-item">
+                        <li class="sidebar-item active">
                             <a class="sidebar-link" href="leave-admin.html"> 
 								<i class="far fa-calendar-times"></i>
 								<span class="align-middle">การลาพนักงาน</span>
                             </a>
                         </li>   
-                        <li class="sidebar-item active">
+                        <li class="sidebar-item">
                             <a class="sidebar-link" href="ot-admin.html"> 
 								<i class="far fa-clock"></i>
 								<span class="align-middle">โอทีพนักงาน</span>
@@ -119,22 +119,46 @@
                         <div class="col">
                             <div class="row">
                                 <div class="text-hx">
-                                    <h4>โอที</h4>
+                                    <h4>การลา</h4>
                                 </div>
                             </div>   
+                            
+                            <h3><i class="fas fa-history"></i> ประวัติการลา</h3>
 
                             <div class="row mb-1"> 
                                 <div class="col-12 col-lg-3"> 
-                                    <h4>วันที่</h4>
-                                    <div class="position-relative"> 
-                                        <i class="far fa-calendar-alt iconx"></i>
-                                        <input type="text" class="form-control date" value="11-01-2568">
-                                    </div>
+                                    <h4>ปี</h4>
+                                    <select class="js-example-basic-multiple w-100" id="year"> 
+                                        <option value="0" disabled selected>-- เลือกปี --</option>
+                                        <option value="1" selected>2568</option> 
+                                        <option value="2">2567</option> 
+                                        <option value="3">2566</option>  
+                                        <option value="4">2565</option>  
+                                        <option value="5">2564</option>   
+                                    </select>
+                                </div>   
+                                <div class="col-12 col-lg-3"> 
+                                    <h4>เดือน</h4>
+                                    <select class="js-example-basic-multiple w-100" id="month"> 
+                                        <option value="0" disabled selected>-- เลือกเดือน --</option>
+                                        <option value="1" selected>มกราคม</option> 
+                                        <option value="2">กุมภาพันธ์</option> 
+                                        <option value="3">มีนาคม</option>  
+                                        <option value="4">เมษายน</option>  
+                                        <option value="5">พฤษภาคม</option>  
+                                        <option value="6">มิถุนายน</option>  
+                                        <option value="7">กรกฎาคม</option>  
+                                        <option value="8">สิงหาคม</option>  
+                                        <option value="9">กันยายน</option>  
+                                        <option value="10">ตุลาคม</option>  
+                                        <option value="11">พฤศจิกายน</option>  
+                                        <option value="12">ธันวาคม </option>  
+                                    </select>
                                 </div>   
                                 <div class="col-12 col-lg-3"> 
                                     <h4>พนักงาน</h4>
                                     <select class="js-example-basic-multiple w-100" id="user"> 
-                                        <option value="0" disabled selected>-- พนักงาน --</option> 
+                                        <option value="0" disabled selected>-- พนักงานทั้งหมด --</option> 
                                         <option value="1">สรยุทธ เขมา</option> 
                                         <option value="2">การัน บุญจิต</option> 
                                         <option value="3">ไชยณรงค์ สาโรจน์</option>   
@@ -148,107 +172,55 @@
                                 </div>    
                             </div> 
                             <hr>
-                            <div class="table-responsive  ">
-                                <table class="table table-bordered" >
+
+                            <div class="table-responsive">
+                                <table class="table table-leave">
                                     <thead>
                                         <tr>
-                                            <th>#</th>
+                                            <th>วันที่สร้าง</th>
                                             <th class="text-center">พนักงาน</th>
-                                            <th class="text-center">เวลาทำงาน</th>
-                                            <th class="text-center">เข้า</th>
-                                            <th class="text-center">ออก</th>
-                                            <th class="text-center">จำนวน OT/ชม.</th>
-                                            <th class="text-center">สถานะ</th>
+                                            <th class="text-center">รหัส</th>
+                                            <th class="text-center">ประเภทการลา</th> 
+                                            <th>วันที่ลา</th>
+                                            <th class="text-center">จำนวน/วัน</th>
+                                            <th>เหตุผลการลา</th>  
                                         </tr>
                                     </thead>
-                                    <tbody>     
+                                    <tbody>
                                         <tr>
-                                            <td>1</td>
+                                            <td>01-02-2568	</td>
                                             <td class="text-center">สรยุทธ เขมา</td>
-                                            <td class="text-center">08:00-17:00</td>
-                                            <td class="text-center">07:46</td>
-                                            <td class="text-center">19:12</td>
-                                            <td class="text-center">
-                                                <span class="text-success">OT 1 ชม</span>
+                                            <td class="text-center">6615</td> 
+                                            <td class="text-center">ลากิจ</td>
+                                            <td>
+                                                02-02-2568 08:00 - 03-02-2568 17:00
                                             </td>
                                             <td class="text-center">
-                                                <div class="text-center text-success">
-                                                    <i class="far fa-check-circle"></i>
-                                                    <br>
-                                                    อนุมัติแล้ว
-                                                </div>
-                                            </td> 
-                                        </tr>  
+                                                2 
+                                            </td>
+                                            <td>ลาธุระทางราชการ</td> 
+                                        </tr>
                                         <tr>
-                                            <td>2</td>
+                                            <td>03-01-2568	</td>
                                             <td class="text-center">การัน บุญจิต</td>
-                                            <td class="text-center">08:00-17:00</td>
-                                            <td class="text-center">07:56</td>
-                                            <td class="text-center">20:03</td>
-                                            <td class="text-center">
-                                                <span class="text-success">OT 2 ชม</span>
+                                            <td class="text-center">6614</td>
+                                            <td class="text-center">ลาป่วย</td>
+                                            <td>
+                                                04-01-2568 08:00 - 04-01-2568 17:00
                                             </td>
                                             <td class="text-center">
-                                                <div class="text-center text-success">
-                                                    <i class="far fa-check-circle"></i>
-                                                    <br>
-                                                    อนุมัติแล้ว
-                                                </div>
-                                            </td> 
-                                        </tr>     
-                                        <tr>
-                                            <td>3</td>
-                                            <td class="text-center">ไชยณรงค์ สาโรจน์</td>
-                                            <td class="text-center">08:00-17:00</td>
-                                            <td class="text-center">07:51</td>
-                                            <td class="text-center">20:13</td>
-                                            <td class="text-center">
-                                                <span class="text-success">OT 2 ชม</span>
+                                               1 
                                             </td>
-                                            <td class="text-center">
-                                                <div class="text-center text-success">
-                                                    <i class="far fa-check-circle"></i>
-                                                    <br>
-                                                    อนุมัติแล้ว
-                                                </div>
-                                            </td> 
-                                        </tr>     
-                                        <tr>
-                                            <td>4</td>
-                                            <td class="text-center">มงคลฉัตร แซ่ลิ้ม</td>
-                                            <td class="text-center">08:00-17:00</td>
-                                            <td class="text-center">08:12</td>
-                                            <td class="text-center">19:34</td>
-                                            <td class="text-center">
-                                                <span class="text-success">OT 1 ชม</span>
-                                            </td>
-                                            <td class="text-center">
-                                                <div class="text-center text-warning">
-                                                    <i class="fas fa-hourglass-end"></i>
-                                                    <br>
-                                                    รอส่งคำขอ
-                                                </div>
-                                            </td> 
-                                        </tr>   
-                                        <tr>
-                                            <td>5</td>
-                                            <td class="text-center">มงคลฉัตร แซ่ลิ้ม</td>
-                                            <td class="text-center">08:00-17:00</td>
-                                            <td class="text-center">08:01</td>
-                                            <td class="text-center">21:34</td>
-                                            <td class="text-center">
-                                                <span class="text-success">OT 3 ชม</span>
-                                            </td>
-                                            <td class="text-center">
-                                                <div class="text-center  ">
-                                                    <button class="btn btn-danger">อนุมัติคำขอ</button> 
-                                                </div> 
-                                            </td> 
-                                        </tr>   
+                                            <td>ลาป่วย</td> 
+                                        </tr> 
                                     </tbody>
                                 </table>
                             </div> 
- 
+
+                            <br> 
+
+
+                            
                         </div>
                     </div>
                 </main> 
